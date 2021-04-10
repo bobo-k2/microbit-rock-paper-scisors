@@ -13,11 +13,7 @@ radio.onReceivedNumber(function (receivedNumber) {
         basic.showNumber(game.score())
     }
 })
-input.onButtonPressed(Button.B, function () {
-    game.setScore(0)
-    basic.showNumber(game.score())
-})
-input.onGesture(Gesture.Shake, function () {
+input.onButtonPressed(Button.A, function () {
     if (hand == 0) {
         hand = randint(1, 3)
         if (hand == 1) {
@@ -49,6 +45,10 @@ input.onGesture(Gesture.Shake, function () {
         }
         radio.sendNumber(hand)
     }
+})
+input.onButtonPressed(Button.B, function () {
+    game.setScore(0)
+    basic.showNumber(game.score())
 })
 let hand = 0
 radio.setGroup(123)
